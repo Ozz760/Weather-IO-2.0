@@ -2,7 +2,7 @@ const {
   AuthenticationError,
   UserInputError,
 } = require("apollo-server-express");
-const { User } = require("../models");
+const { User, Comment } = require("../models");
 const { signToken } = require("../util/auth");
 const { dateScalar } = require("./customScalars");
 
@@ -17,6 +17,10 @@ const resolvers = {
       }
       return User.findOne({ email: ctx.user.email });
     },
+    comment: async (parent, { commentId }) => {
+      const comment = await Comment.findOne({_id: commentId}); 
+      return comment; 
+    }
   },
   Mutation: {
     createUser: async (parent, args) => {
