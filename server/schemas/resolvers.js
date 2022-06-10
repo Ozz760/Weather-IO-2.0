@@ -51,6 +51,10 @@ const resolvers = {
       await user.save();
       return { token, user };
     },
+    addComment: async (parent, args,) => {
+      const comment = await Comment.create({ ...args });
+      return comment;
+    }
   },
 };
 
