@@ -51,10 +51,10 @@ const resolvers = {
       await user.save();
       return { token, user };
     },
-    addComment: async (parent, { commentAuthor, comment }) => {
+    addComment: async (parent, { commentAuthor, commentText }) => {
       const newComment = await Comment.create({
         commentAuthor,
-        comment,
+        commentText,
       });
       return newComment;
     }
