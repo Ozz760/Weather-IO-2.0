@@ -57,6 +57,10 @@ const resolvers = {
         commentText,
       });
       return newComment;
+    }, 
+    removeComment: async (parent, { commentId }) => {
+      const comment = await Comment.findOneAndDelete({_id: commentId}); 
+      return comment; 
     }
   },
 };
