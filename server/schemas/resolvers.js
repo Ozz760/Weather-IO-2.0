@@ -18,9 +18,9 @@ const resolvers = {
       return User.findOne({ email: ctx.user.email });
     },
     comment: async (parent, { commentId }) => {
-      const comment = await Comment.findOne({_id: commentId}); 
-      return comment; 
-    }
+      const comment = await Comment.findOne({ _id: commentId });
+      return comment;
+    },
   },
   Mutation: {
     createUser: async (parent, args) => {
@@ -57,14 +57,18 @@ const resolvers = {
         commentText,
       });
       return newComment;
-    }, 
+    },
     removeComment: async (parent, { commentId }) => {
-      const comment = await Comment.findOneAndDelete({_id: commentId}); 
+      const comment = await Comment.findOneAndDelete({ _id: commentId });
       return comment;
     },
     updateComment: async (parent, { commentId, commentText }) => {
-      const comment = await Comment.findOneAndUpdate({_id: commentId}, {commentText}, {new: true}); 
-      return comment; 
+      const comment = await Comment.findOneAndUpdate(
+        { _id: commentId },
+        { commentText },
+        { new: true }
+      );
+      return comment;
     },
   },
 };
