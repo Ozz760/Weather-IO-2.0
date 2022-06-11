@@ -60,8 +60,12 @@ const resolvers = {
     }, 
     removeComment: async (parent, { commentId }) => {
       const comment = await Comment.findOneAndDelete({_id: commentId}); 
+      return comment;
+    },
+    updateComment: async (parent, { commentId, commentText }) => {
+      const comment = await Comment.findOneAndUpdate({_id: commentId}, {commentText}, {new: true}); 
       return comment; 
-    }
+    },
   },
 };
 
