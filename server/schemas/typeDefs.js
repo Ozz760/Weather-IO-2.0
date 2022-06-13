@@ -24,6 +24,14 @@ const typeDefs = gql`
     username: String!
     email: String!
     lastLogin: Date!
+    comment: [Comment!] 
+  }
+  
+  type Comment {
+    _id: ID!
+    commentAuthor: String!
+    commentText: String!
+    Date: Date! 
   }
 `;
 
