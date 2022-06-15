@@ -10,3 +10,14 @@ export const ME = gql`
     }
   }
 `;
+
+export const QUERY_COMMENT = gql`
+  query Comment($commentId: ID!) {
+    comment(id: $commentId) {
+      _id
+      commentAuthor
+      commentText
+      Date
+    }
+  }
+`;

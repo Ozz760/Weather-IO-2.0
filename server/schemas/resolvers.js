@@ -5,8 +5,8 @@ const {
 const { User, Comment } = require("../models");
 const { signToken } = require("../util/auth");
 const { dateScalar } = require("./customScalars");
-const { Types } = require("mongoose"); 
-const {resolveReadonlyArrayThink } = require("graphql"); 
+const { Types } = require("mongoose");
+const { resolveReadonlyArrayThink } = require("graphql");
 
 const resolvers = {
   Date: dateScalar,
