@@ -15,3 +15,14 @@ export const LOGIN = gql`
     }
   }
 `;
+
+export const ADD_COMMENT = gql`
+  mutation AddComment($commentAuthor: String!, $commentText: String!) {
+    addComment(commentAuthor: $commentAuthor, commentText: $commentText) {
+      _id
+      commentAuthor
+      commentText
+      Date
+    }
+  }
+`;
