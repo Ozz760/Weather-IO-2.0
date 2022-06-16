@@ -26,3 +26,25 @@ export const ADD_COMMENT = gql`
     }
   }
 `;
+
+export const REMOVE_COMMENT = gql`
+  mutation RemoveComment($removeCommentId: ID!) {
+    removeComment(id: $removeCommentId) {
+      _id
+      commentAuthor
+      commentText
+      Date
+    }
+  }
+`;
+
+export const UPDATE_COMMENT = gql`
+  mutation UpdateComment($updateCommentId: ID!, $commentText: String!) {
+    updateComment(id: $updateCommentId, commentText: $commentText) {
+      _id
+      commentAuthor
+      commentText
+      Date
+    }
+  }
+`;
