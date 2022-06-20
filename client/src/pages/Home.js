@@ -1,4 +1,5 @@
 import { useAuth } from "../util/auth";
+import fetchWeather from "../util/weather";
 
 export default function Home() {
   const { isLoggedIn, user } = useAuth();
@@ -8,10 +9,10 @@ export default function Home() {
       <h1>Welcome {isLoggedIn ? user.username : "Guest"}!</h1>
       <hr />
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo cumque
-        explicabo ipsum, facilis repellendus omnis amet in accusantium quisquam
-        nam qui consectetur sunt distinctio nemo molestiae ratione. Iure,
-        aliquam debitis.
+        Welcome to Weather.IO. This is a page where you can look at the current
+        weather condition of your location and tell other users if there is any
+        discrepancies. You need to be login in order to view the comments and
+        make comments your self.
       </p>
     </div>
   );
