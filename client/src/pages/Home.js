@@ -12,7 +12,7 @@ export default function Home() {
         Welcome to Weather.IO. This is a page where you can look at the current
         weather condition of your location and tell other users if there is any
         discrepancies. You need to be login in order to view the comments and
-        make comments your self.
+        make comments yourself.
       </p>
     </div>
   );
