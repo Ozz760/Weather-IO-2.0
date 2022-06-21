@@ -1,13 +1,14 @@
 import { ApolloProvider } from "@apollo/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import RequireAuth from "./components/RequireAuth";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
+import Home from "./pages/Home/Home";
+import Login from "./pages/Login/Login";
 import ProtectedPageExample from "./pages/ProtectedPageExample";
-import SignUp from "./pages/SignUp";
+import SignUp from "./pages/SignUp/SignUp";
 import { client } from "./util/apolloClient";
 import { AuthProvider } from "./util/auth";
+import "./App.css"; 
 
 function App() {
   return (
