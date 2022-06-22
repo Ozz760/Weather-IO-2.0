@@ -3,7 +3,14 @@ const apiKey = "e4d5971bc32e69580b23b38529ab190e";
 
 
 function weatherCall (cityName) {
-  const weatherUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + apiKey; 
+  const weatherUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + apiKey;
+  fetch (weatherUrl)
+  .then(function(responce) {
+    return responce.json(); 
+  }) 
+  .then(function(data) {
+    console.log(data);
+});
 }
 
 export default function Home() {
