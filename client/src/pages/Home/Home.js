@@ -1,5 +1,10 @@
 import { useAuth } from "../../util/auth";
+const apiKey = "e4d5971bc32e69580b23b38529ab190e"; 
 
+
+function weatherCall (cityName) {
+  const weatherUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + apiKey; 
+}
 
 export default function Home() {
   const { isLoggedIn, user } = useAuth();
