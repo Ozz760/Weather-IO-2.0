@@ -26,6 +26,20 @@ export default function Home() {
         discrepancies. You need to be login in order to view the comments and
         make comments yourself.
       </p>
+      <form id="search-form">
+        <input type="text" id="search-input" className="form-input w-100 fs-3" placeholder="Enter a city name" />
+        <button type="submit" id="submit button" className="col-12 bg-info fs-4 my-4 p-2 border-dark">
+          Submit 
+        </button>
+      </form>
+      <div>
+        <h3>
+          Weather Info
+        </h3>
+        <p>
+          Location: {weatherCall}
+        </p>
+      </div>
     </div>
   );
 }
