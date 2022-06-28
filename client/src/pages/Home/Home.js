@@ -1,19 +1,18 @@
 import { useAuth } from "../../util/auth";
-const apiKey = "e4d5971bc32e69580b23b38529ab190e"; 
+import weatherCall from "../../util/weather";
+import { useState, useEffect } from "react";
 
 
-function weatherCall (cityName) {
-  const weatherUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + ",us&appid=" + apiKey + "&units=imperial";
-  fetch (weatherUrl)
-  .then(function(responce) {
-    return responce.json(); 
-  }) 
-  .then(function(data) {
-    console.log(data);
-});
-}
 
 export default function Home() {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    //fetching data from the api
+  }, []);
+  
   const { isLoggedIn, user } = useAuth();
   return (
     <div>
@@ -37,7 +36,7 @@ export default function Home() {
           Weather Info
         </h3>
         <p>
-          Location: {weatherCall}
+          Location: 
         </p>
       </div>
     </div>
