@@ -1,6 +1,7 @@
 import { useAuth } from "../../util/auth";
 import weatherCall from "../../util/weather";
 import { useState, useEffect } from "react";
+const apiKey = "e4d5971bc32e69580b23b38529ab190e"; 
 
 
 
@@ -11,6 +12,8 @@ export default function Home() {
 
   useEffect(() => {
     //fetching data from the api
+    fetch ("https://api.openweathermap.org/data/2.5/weather?q=SanDiego,us&appid=" + apiKey + "&units=imperial")
+    .then((response) => console.log(response));
   }, []);
   
   const { isLoggedIn, user } = useAuth();
